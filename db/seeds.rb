@@ -5,3 +5,17 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Ingredient.create(name: "lemon")
+Ingredient.create(name: "ice")
+Ingredient.create(name: "mint leaves")
+
+Cocktail.create(name: "Mojito")
+Cocktail.create(name: "Whiskey Sour")
+Cocktail.create(name: "Daiqiri")
+
+descriptions = ["2 spoon", "1 l", "19cl"]
+
+descriptions.each do |descr|
+  Dose.create(description: descr, ingredient_id: Ingredient.all.sample.id, cocktail_id: Cocktail.all.sample.id )
+end

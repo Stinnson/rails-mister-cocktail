@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>RailsMisterCocktail</title>
     <%= csrf_meta_tags %>
 
@@ -9,6 +11,28 @@
   </head>
 
   <body>
+  <div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to "Home", cocktails_path, class: "navbar-wagon-brand" %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+    <%= link_to 'Create Cocktail', new_cocktail_path(@cocktail), class: "navbar-wagon-item navbar-wagon-link"%>
+
+    <!-- Profile picture with dropdown list -->
+    <div class="navbar-wagon-item">
+      <div class="dropdown">
+        <img src="https://cdn.liquor.com/wp-content/uploads/2015/03/hub_classic_cocktail_margarita.jpg" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Log Out</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</div>
     <%= yield %>
   </body>
 </html>

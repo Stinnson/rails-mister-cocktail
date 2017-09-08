@@ -1,0 +1,23 @@
+<div class="container">
+  <row>
+
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('http://cdn.liquor.com/wp-content/uploads/2010/09/20141732/classic-mojito-720FB.jpg');">
+    <div class="banner-content">
+    <h1><%= @cocktail.name %></h1>
+
+      <% @cocktail.doses.each do |dose| %>
+      <li> <%= dose.ingredient.name %>
+      <%= dose.description %> </li>
+      <% end %>
+      <%= link_to 'Update Doses', new_cocktail_dose_path(@cocktail), class: "btn btn-primary btn-lg" %>
+
+    </div>
+  </div>
+
+
+  </row>
+  <%= link_to 'Go Back', cocktails_path, class: "btn btn-danger" %>
+</div>
+
+
+
